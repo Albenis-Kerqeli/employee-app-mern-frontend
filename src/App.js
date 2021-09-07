@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import {StoreContext} from './contexts/Store';
-import { Route } from 'react-router-dom/cjs/react-router-dom.min';
+import { Route } from 'react-router-dom';
 
 import './styles/App.css';
 import {BrowserRouter as Router , Switch} from 'react-router-dom';
@@ -11,7 +11,7 @@ const Navbar = React.lazy(() => import('./components/Navbar.js'));
 const App = () => {
   const {isLoggedIn} = React.useContext(StoreContext);
   return (
-    <Suspense fallback="loading">
+    <Suspense fallback={null}>
     <Router>
     <Navbar/>
 

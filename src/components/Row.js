@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Button from './Button';
 const AddModal = React.lazy(() => import('./AddModal'));
-const Row = () => {
+const Row = React.memo(()  => {
     const [modalOpen, setModalOpen] = useState(false);
 
 
@@ -15,5 +15,5 @@ const Row = () => {
       
    </div>
     )
-    }
+    })
 export default Row;
