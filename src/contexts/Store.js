@@ -1,7 +1,7 @@
 import React, {useEffect, useState, createContext} from 'react';
 import axios from 'axios';
 export const StoreContext = createContext();
-const StoreProvider = (props) => {
+const StoreProvider = React.memo(props => {
     const token =localStorage.getItem('token');
     const [employees, setEmployees] = useState([]);
 
@@ -49,6 +49,6 @@ return(
         {props.children}
     </StoreContext.Provider>
 )
-}
+});
 
 export default StoreProvider;
