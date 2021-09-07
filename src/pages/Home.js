@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
-import Hero from '../components/Hero';
+const Hero = React.lazy(() => import('../components/Hero'));
 const Home = () => {
   return (
       <>

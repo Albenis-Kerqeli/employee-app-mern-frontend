@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Button from './Button';
-import AddModal from './AddModal';
+const AddModal = React.lazy(() => import('./AddModal'));
 const Row = () => {
     const [modalOpen, setModalOpen] = useState(false);
 
