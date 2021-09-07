@@ -16,9 +16,9 @@ const App = () => {
     <Navbar/>
 
     <Switch>
- {isLoggedIn ? <Route exact path="/" component={Home} /> : <Route exact path="/" component={Login} />}
- <Route path="/login" component={Login} />
-<Route path="/register"  component={Register}/>
+ {isLoggedIn ? <Route   path="/" component={Home} /> : <Route exact path="/" component={Login} />}
+ {!isLoggedIn ? <Route exact path="/login" component={Login} /> : <Route  path="/" component={Home} />}
+ {!isLoggedIn ? <Route exact path="/register"  component={Register} /> : <Route  path="/" component={Home} />}
 </Switch>
 </Router>
 
