@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 import Button from '../components/Button';
 
  
-const Register = () => {
+const Register = React.memo(() => {
    const [name,setName] = useState('');
    const [email,setEmail] = useState('');
    const [phone,setPhone] = useState(0);
@@ -129,5 +129,5 @@ const handleRegister = async (e) => {
       </div>
     </div>
   )
-}
+})
 export default Register;

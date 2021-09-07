@@ -2,7 +2,7 @@ import React from 'react';
 import { StoreContext } from '../contexts/Store';
 import Axios from 'axios';
 import Button from './Button';
-const Table = () => {
+const Table = React.memo(() => {
 
     const {employees,setEmployees}  = React.useContext(StoreContext);
 
@@ -75,7 +75,7 @@ const Table = () => {
 
     </section>
 )
-        }
+        })
     
 
 export default Table;

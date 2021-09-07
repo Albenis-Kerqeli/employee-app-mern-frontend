@@ -3,7 +3,7 @@ import React, {useContext,useState } from 'react'
 import { StoreContext } from '../contexts/Store';
 import Axios from 'axios';
 
-function AddModal({ setOpenModal ,setClosedModal , children }) {
+const AddModal =({ setOpenModal ,setClosedModal , children }) => {
   // Declare states for form
   const {employees,setEmployees}  = useContext(StoreContext);
 const [name,setName] = useState('');
@@ -94,5 +94,7 @@ Create
       </div>
     );
   }
+  
+
   
   export default AddModal;

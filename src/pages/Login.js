@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { StoreContext } from '../contexts/Store';
 import Button from '../components/Button';
 
-const Login = () => {
+const Login = React.memo(() => {
   const history = useHistory();
   const {setIsLoggedIn } = useContext(StoreContext);
   const [email,setEmail] = useState('');
@@ -108,5 +108,5 @@ const Login = () => {
       </div>
     </div>
   )
-}
+})
 export default Login;
