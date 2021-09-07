@@ -1,7 +1,7 @@
-import React, {useEffect, useState, createContext} from 'react';
+import React, {useEffect, useState, createContext , useMemo} from 'react';
 import axios from 'axios';
 export const StoreContext = createContext();
-const StoreProvider = React.memo(props => {
+const StoreProvider = (props) => {
     const token =localStorage.getItem('token');
     const [employees, setEmployees] = useState([]);
 
@@ -39,16 +39,18 @@ const getEmployees = async () => {
 getEmployees();
     },[token]);
     
-return(
-    <StoreContext.Provider value={{
+    const value = useMemo(() => ({
         employees,
-        setEmployees,
-        isLoggedIn,
-        setIsLoggedIn
-    }}>
+     setEmployees,
+     isLoggedIn,
+     setIsLoggedIn
+      }), [employees, isLoggedIn])
+
+return(
+    <StoreContext.Provider value={value}>
         {props.children}
     </StoreContext.Provider>
 )
-});
+}
 
 export default StoreProvider;
