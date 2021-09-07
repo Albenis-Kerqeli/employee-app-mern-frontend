@@ -13,7 +13,6 @@ const Table = () => {
   })
 }
 
-
     return (
          <section className="container  my-10 p-4 mx-md md:container  flex flex-col items-center justify-center flex-wrap  ">
         <div className="w-full  min-h-[auto]  py-3	 flex flex-row items-center justify-around gap-20 bg-gray-50   flex-wrap font-poppins  ">
@@ -38,6 +37,7 @@ const Table = () => {
 
             </div>
         </div>
+{/* eslint-disable-next-line */}
         {employees==''?<h1 className="text-center py-5 font-poppins ">Start to Add a Employee </h1>: (employees.map(employee => (
             <div key={employee._id} className="w-full  min-h-[auto]  	 flex flex-row items-center justify-around gap-20 bg-white flex-wrap  font-open  ">
             <div className="p-1 w-40 min-h-[100px]   flex items-center justify-center flex-wrap">
@@ -46,6 +46,7 @@ const Table = () => {
             <div className="p-1 w-[160px] max-w-[160px] min-h-[100px] flex items-center justify-center   flex-wrap ">
                 <h4 className="text-center  break-all">{employee.designation}</h4>
             </div>
+            
 
 
 
