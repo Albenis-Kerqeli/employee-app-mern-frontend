@@ -4,7 +4,7 @@ export const StoreContext = createContext();
 const StoreProvider = (props) => {
     const token =localStorage.getItem('token');
     const [employees, setEmployees] = useState([]);
-
+const [filteredEmployee,setFilteredEmployee]=  useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
@@ -22,6 +22,7 @@ const getEmployees = async () => {
           },
         }).then(res => {
             setEmployees(res.data);
+            setFilteredEmployee(res.data);
 
 
 
@@ -43,8 +44,10 @@ getEmployees();
         employees,
      setEmployees,
      isLoggedIn,
-     setIsLoggedIn
-      }), [employees, isLoggedIn])
+     setIsLoggedIn,
+     filteredEmployee,
+     setFilteredEmployee
+      }), [employees, isLoggedIn , filteredEmployee])
 
 return(
     <StoreContext.Provider value={value}>
