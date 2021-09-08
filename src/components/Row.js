@@ -4,7 +4,7 @@ const AddModal = React.lazy(() => import('./AddModal'));
 const {StoreContext} = require('../contexts/Store');
 const Row = React.memo(()  => {
     const {employees,setEmployees} = React.useContext(StoreContext);
-const {filteredEmployee , setFilteredEmployee} = React.useContext(StoreContext);
+const {filteredEmployee } = React.useContext(StoreContext);
     const [modalOpen, setModalOpen] = useState(false);
 const [search,setSearch] = useState('');
 
@@ -14,8 +14,7 @@ const handleSearch = (e) => {
 }
 
 React.useEffect(() => {
-
-if(search=="" ) {
+if(search==="" ) {
     setEmployees(filteredEmployee);
 } else {
     const results =[...employees].filter(filtere =>
@@ -24,7 +23,9 @@ if(search=="" ) {
       setEmployees(results);
     
 }
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
+  
     return(
    <div className=" w-full flex flex-row flex-wrap items-center justify-between py-5">
        <div className="container mx-sm  sm:container flex flex-row flex-wrap items-center justify-around">
