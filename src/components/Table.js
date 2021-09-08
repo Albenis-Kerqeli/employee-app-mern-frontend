@@ -14,7 +14,7 @@ const Table = React.memo(() => {
 }
 
     return (
-         <section className="container  my-10 p-4 mx-md md:container  flex flex-col items-center justify-center flex-wrap  overflow-scroll">
+         <section className="container  my-10 p-4 mx-md md:container  flex flex-col items-center justify-center flex-wrap  overflow-auto">
         <div className="w-full  min-h-[auto]  py-3	 flex flex-row items-center justify-around gap-20 bg-gray-50   flex-wrap font-poppins  ">
             <div className="p-1 w-40 min-h-[auto]   flex items-center justify-center flex-wrap">
                 <h1 className="text-center">Name</h1>

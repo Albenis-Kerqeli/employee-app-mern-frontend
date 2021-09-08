@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Button from './Button';
-const AddModal = React.lazy(() => import('./AddModal'));
+import AddModal from './AddModal';
 const {StoreContext} = require('../contexts/Store');
 const Row = React.memo(()  => {
     const {employees,setEmployees} = React.useContext(StoreContext);
@@ -29,11 +29,13 @@ if(search==="" ) {
     return(
    <div className=" w-full flex flex-row flex-wrap items-center justify-between py-5">
        <div className="container mx-sm  sm:container flex flex-row flex-wrap items-center justify-around">
+       <div className="flex flex-row items-center justify-center gap-1">
            <Button className="bg-red-700" onClick={() => setModalOpen(true)}>Add Employee</Button>
            {modalOpen?<AddModal setOpenModal={setModalOpen} setClosedModal={((e)=> setModalOpen(false))}/>:null}
+           </div>
 
            <form className="flex flex-row items-center justify-center gap-10">
-           <input type="text" className="py-3" value={search} placeholder="Enter Employee name" onChange={handleSearch} />
+           <input type="text" className="p-3" value={search} placeholder="Enter Employee name" onChange={handleSearch} />
                <Button>
 Search                   
                </Button>
