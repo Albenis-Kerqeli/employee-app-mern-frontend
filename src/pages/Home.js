@@ -1,11 +1,8 @@
-import {memo, Suspense} from 'react';
 import Hero from '../components/Hero';
-const Home = memo(() => {
+const Home = () => {
   return (
-      <Suspense fallback="Loading">
 <Hero/>
-</Suspense>
   );
-});
+};
 
 export default Home;

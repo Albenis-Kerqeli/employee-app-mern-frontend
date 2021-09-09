@@ -1,9 +1,9 @@
 
-import {useContext, memo} from 'react'
+import {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import {StoreContext} from '../contexts/Store';
 import {useHistory} from 'react-router-dom'; 
-const Navbar = memo(() => {
+const Navbar = () => {
   const history = useHistory();
 
   const {isLoggedIn, setIsLoggedIn} = useContext(StoreContext);
@@ -39,6 +39,6 @@ const Navbar = memo(() => {
 </div>
 </div>   
     )
-})
+}
 
 export default Navbar;

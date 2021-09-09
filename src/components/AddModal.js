@@ -1,9 +1,9 @@
-import {useContext,useState } from 'react'
+import {useContext,useState ,memo } from 'react'
 import { StoreContext } from '../contexts/Store';
 import Axios from 'axios';
 import '../styles/modal.css';
 
-const AddModal =({ setOpenModal ,setClosedModal , children }) => {
+const AddModal =memo(({ setOpenModal ,setClosedModal}) =>  {
   // Declare states for form
   const {employees,setEmployees}  = useContext(StoreContext);
 const [name,setName] = useState('');
@@ -95,7 +95,7 @@ Create
         </div>
       </div>
     );
-  }
+  });
   
 
   

@@ -1,10 +1,10 @@
-import  {useState, memo } from 'react';
+import  {useState } from 'react';
 import Axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import Button from '../components/Button';
 
  
-const Register = memo(() => {
+const Register = () => {
    const [name,setName] = useState('');
    const [email,setEmail] = useState('');
    const [phone,setPhone] = useState(0);
@@ -129,5 +129,5 @@ async  function handleRegister(e){
       </div>
     </div>
   )
-})
+}
 export default Register;

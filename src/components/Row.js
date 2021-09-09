@@ -7,7 +7,7 @@ const Row = memo(()  => {
     const [modalOpen, setModalOpen] = useState(false);
 const [search,setSearch] = useState('');
 
-const handleSearch = (e) => {
+function handleSearch(e) {
     e.preventDefault();
     setSearch(e.target.value);
 }
