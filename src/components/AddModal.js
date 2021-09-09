@@ -81,10 +81,10 @@ else {
         <div className="modalBody">
         <form type="submit">
         
-        <input type="text" onChange={handleName} placeholder="Enter Your Name" required/>
-<input type="text" onChange={handleDesignation}  placeholder="Enter your Designation" required />
-<input type="text" onChange={handleEmail}   placeholder="Enter your Email" required/>
-<input type="number" onChange={handleSalary}   placeholder="Enter your Salary" required />
+        <input type="text" onChange={handleName} placeholder="Employee Name" required/>
+<input type="text" onChange={handleDesignation}  placeholder="Employee Designation" required />
+<input type="text" onChange={handleEmail}   placeholder="Employee Email" required/>
+<input type="number" onChange={handleSalary}   placeholder="Employee Salary" required />
 
 
         </form>
