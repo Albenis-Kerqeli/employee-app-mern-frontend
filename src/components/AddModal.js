@@ -1,4 +1,3 @@
-import '../styles/index.css';
 import {useContext,useState } from 'react'
 import { StoreContext } from '../contexts/Store';
 import Axios from 'axios';
