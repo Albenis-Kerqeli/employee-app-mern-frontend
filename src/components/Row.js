@@ -32,13 +32,13 @@ if(search==="" ) {
   
     return(
    <div className=" w-full flex flex-row flex-wrap items-center justify-between py-5">
-       <div className="container mx-sm  sm:container flex flex-row flex-wrap items-center justify-around">
-       <div className="flex flex-row items-center justify-center gap-1">
+       <div className="container mx-md  sm:container flex flex-row flex-wrap items-center justify-around">
+       <div className="flex flex-row items-center justify-center my-5 flex-wrap">
            <Button className="bg-red-700" onClick={() => setModalOpen(true)}>Add Employee</Button>
            {modalOpen?<AddModal setOpenModal={setModalOpen} setClosedModal={handleOpen}/>:null}
            </div>
 
-           <form className="flex flex-row items-center justify-center gap-10">
+           <form className="flex flex-row items-center justify-center gap-5 flex-wrap">
            <input type="text" className="p-3" value={search} placeholder="Enter Employee name" onChange={handleSearch} />
                <Button>
 Search                   
