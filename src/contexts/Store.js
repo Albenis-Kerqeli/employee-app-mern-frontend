@@ -19,6 +19,8 @@ async function getEmployees() {
             'Content-Type' : 'application/json',
             'Accept' : 'application/json',
             "x-access-token": token,
+            "X-Content-Type-Options": "nosniff",
+
           },
         }).then(res => {
             setEmployees(res.data);

@@ -35,7 +35,13 @@ async  function handleRegister(e){
  if(name === '' || password === '' || email === '' || phone === 0){
    setError('Please enter all fields');
  }else {
-  const res = await Axios.post(`${process.env.REACT_APP_API_URL}/api/register` ,{name:name,email:email, phone:phone,password:password});
+  const headers = {
+    'Content-Type' : 'application/json',
+    'Accept' : 'application/json',
+  "X-Content-Type-Options": "nosniff",
+  }
+   
+  const res = await Axios.post(`${process.env.REACT_APP_API_URL}/api/register` ,{name:name,email:email, phone:phone,password:password} , {headers});
   if(res.data.error) {
     alert(res.data.error);
   } else {

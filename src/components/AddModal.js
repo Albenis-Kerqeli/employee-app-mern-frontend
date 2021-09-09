@@ -41,6 +41,7 @@ const headers = {
   'Content-Type' : 'application/json',
   'Accept' : 'application/json',
   "x-access-token": localStorage.getItem("token"),
+"X-Content-Type-Options": "nosniff",
 }
 
  await Axios.post(`${process.env.REACT_APP_API_URL}/api/employee/store`, {

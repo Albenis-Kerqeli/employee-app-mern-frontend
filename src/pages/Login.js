@@ -24,8 +24,14 @@ function handlePassword(e) {
     if (email === '' || password === '') {
       setError('Please enter all fields');
     }
+    
     else {
-       await Axios.post(`${process.env.REACT_APP_API_URL}/api/login`, { username: email, password: password }).then((res) => {
+      const headers = {
+        'Content-Type' : 'application/json',
+        'Accept' : 'application/json',
+      "X-Content-Type-Options": "nosniff",
+      }
+       await Axios.post(`${process.env.REACT_APP_API_URL}/api/login`, { username: email, password: password }, {headers}).then((res) => {
 
         if (res.data.error) {
           alert(res.data.error);
