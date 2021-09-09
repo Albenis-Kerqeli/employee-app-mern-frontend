@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import  {useState,memo, useContext, useEffect} from 'react';
 import Button from './Button';
 import AddModal from './AddModal';
 const {StoreContext} = require('../contexts/Store');
-const Row = React.memo(()  => {
-    const {employees,setEmployees} = React.useContext(StoreContext);
-const {filteredEmployee } = React.useContext(StoreContext);
+const Row = memo(()  => {
+    const {employees,setEmployees , filteredEmployee} = useContext(StoreContext);
     const [modalOpen, setModalOpen] = useState(false);
 const [search,setSearch] = useState('');
 
@@ -13,7 +12,7 @@ const handleSearch = (e) => {
     setSearch(e.target.value);
 }
 
-React.useEffect(() => {
+useEffect(() => {
 if(search==="" ) {
     setEmployees(filteredEmployee);
 } else {

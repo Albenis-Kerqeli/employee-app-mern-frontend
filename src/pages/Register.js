@@ -1,10 +1,10 @@
-import React , {useState} from 'react';
+import  {useState, memo} from 'react';
 import Axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import Button from '../components/Button';
 
  
-const Register = React.memo(() => {
+const Register = memo(() => {
    const [name,setName] = useState('');
    const [email,setEmail] = useState('');
    const [phone,setPhone] = useState(0);

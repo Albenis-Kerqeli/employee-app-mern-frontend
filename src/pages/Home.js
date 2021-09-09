@@ -1,7 +1,7 @@
-import React from 'react';
+import {memo} from 'react';
 import '../styles/App.css';
 import Hero from '../components/Hero';
-const Home = React.memo(() => {
+const Home = memo(() => {
   return (
       <>
 <Hero/>

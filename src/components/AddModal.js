@@ -1,5 +1,5 @@
 import '../styles/Modal.css';
-import React, {useContext,useState } from 'react'
+import {useContext,useState } from 'react'
 import { StoreContext } from '../contexts/Store';
 import Axios from 'axios';
 

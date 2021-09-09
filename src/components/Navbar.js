@@ -1,9 +1,9 @@
 
-import React, {useContext} from 'react'
+import {useContext, memo} from 'react'
 import { Link } from 'react-router-dom'
 import {StoreContext} from '../contexts/Store';
 import {useHistory} from 'react-router-dom'; 
-const Navbar = React.memo(() => {
+const Navbar = memo(() => {
   const history = useHistory();
 
   const {isLoggedIn, setIsLoggedIn} = useContext(StoreContext);

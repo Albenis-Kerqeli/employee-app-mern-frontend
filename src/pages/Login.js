@@ -1,10 +1,10 @@
-import React, {useContext,useState} from 'react';
+import {useContext,useState,memo} from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { StoreContext } from '../contexts/Store';
 import Button from '../components/Button';
 
-const Login = React.memo(() => {
+const Login = memo(() => {
   const history = useHistory();
   const {setIsLoggedIn } = useContext(StoreContext);
   const [email,setEmail] = useState('');

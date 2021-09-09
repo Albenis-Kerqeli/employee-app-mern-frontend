@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense , } from 'react';
 import {StoreContext} from './contexts/Store';
 import { Route } from 'react-router-dom';
 
@@ -8,6 +8,7 @@ const Home = React.lazy(() => import('./pages/Home.js'));
 const Login = React.lazy(() => import('./pages/Login.js'));
 const Register = React.lazy(() => import('./pages/Register.js'));
 const Navbar = React.lazy(() => import('./components/Navbar.js'));
+
 const App = () => {
   const {isLoggedIn} = React.useContext(StoreContext);
   return (
@@ -23,6 +24,7 @@ const App = () => {
 </Router>
 
 </Suspense>
+
 
 
   );

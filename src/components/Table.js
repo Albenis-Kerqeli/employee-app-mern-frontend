@@ -1,10 +1,10 @@
-import React from 'react';
+import {useContext, memo} from 'react';
 import { StoreContext } from '../contexts/Store';
 import Axios from 'axios';
 import Button from './Button';
-const Table = React.memo(() => {
+const Table = memo(() => {
 
-    const {employees,setEmployees}  = React.useContext(StoreContext);
+    const {employees,setEmployees}  = useContext(StoreContext);
 
     const deleteFriend = (id) => {
         Axios.delete(`${process.env.REACT_APP_API_URL}/api/employee/delete/${id}`).then(() => {
