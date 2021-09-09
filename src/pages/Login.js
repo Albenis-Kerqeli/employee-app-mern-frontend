@@ -1,4 +1,4 @@
-import {useContext,useState,memo} from 'react';
+import {useContext,useState,memo, Suspense} from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { StoreContext } from '../contexts/Store';
@@ -39,6 +39,7 @@ const Login = memo(() => {
   }
 
   return (
+    <Suspense fallback="Loading">
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
@@ -107,6 +108,8 @@ const Login = memo(() => {
         </form>
       </div>
     </div>
+    </Suspense>
+
   )
 })
 export default Login;
