@@ -11,7 +11,7 @@ const Navbar = React.lazy(() => import('./components/Navbar.js'));
 const App = () => {
   const {isLoggedIn} = React.useContext(StoreContext);
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={'Loading...'}>
     <Router>
     <Navbar/>
 
