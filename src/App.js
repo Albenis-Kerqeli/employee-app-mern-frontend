@@ -12,7 +12,7 @@ const App = () => {
   const {isLoggedIn} = useContext(StoreContext);
   return (
     <Router>
-    <Suspense fallback="null">
+    <Suspense fallback={null}>
     <Navbar/>
 
     <Switch>
