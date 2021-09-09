@@ -1,4 +1,4 @@
-import  {useState, memo , Suspense} from 'react';
+import  {useState, memo } from 'react';
 import Axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import Button from '../components/Button';
@@ -15,7 +15,7 @@ const Register = memo(() => {
 
 
 ///.  
-const handleRegister = async (e) => {
+async  function handleRegister(e){
   e.preventDefault();
  if(name === '' || password === '' || email === '' || phone === 0){
    setError('Please enter all fields');
@@ -38,14 +38,13 @@ const handleRegister = async (e) => {
 
 
   return (
-    <Suspense fallback="Loading">
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
           <img
             className="mx-auto h-12 w-auto"
             src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-            alt="Workflow"
+            alt="Workflow" width="250" height="250"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Register</h2>
  
@@ -129,7 +128,6 @@ const handleRegister = async (e) => {
         </form>
       </div>
     </div>
-    </Suspense>
   )
 })
 export default Register;

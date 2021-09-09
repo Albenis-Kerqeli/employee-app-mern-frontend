@@ -14,7 +14,8 @@ const [salary,setSalary] = useState('');
 
 
 
-const addEmployee =  async (e) => {
+
+async function addEmployee (e){
   e.preventDefault();
 
 if(name==="" || designation==="" || email==="" || salary===""){
@@ -29,7 +30,7 @@ const headers = {
   "x-access-token": localStorage.getItem("token"),
 }
 
- Axios.post(`${process.env.REACT_APP_API_URL}/api/employee/store`, {
+ await Axios.post(`${process.env.REACT_APP_API_URL}/api/employee/store`, {
   name:name,
   designation:designation,
   email:email,
@@ -56,6 +57,7 @@ else {
  }
 
 }
+
     return (
       <div className="modalBackground">
         <div className="modalContainer">
@@ -67,7 +69,7 @@ else {
         <form type="submit">
         
         <input type="text" onChange={(e)=> setName(e.target.value)} placeholder="Enter Your Name" required/>
-<input type="text" onChange={(e)=> setDesignation(e.target.value)}  placeholder="Enter your Designation" requird />
+<input type="text" onChange={(e)=> setDesignation(e.target.value)}  placeholder="Enter your Designation" required />
 <input type="text" onChange={(e)=> setEmail(e.target.value)}   placeholder="Enter your Email" required/>
 <input type="number" onChange={(e)=> setSalary(e.target.value)}   placeholder="Enter your Salary" required />
 

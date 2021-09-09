@@ -6,11 +6,11 @@ const Table = memo(() => {
 
     const {employees,setEmployees}  = useContext(StoreContext);
 
-    const deleteFriend = (id) => {
-        Axios.delete(`${process.env.REACT_APP_API_URL}/api/employee/delete/${id}`).then(() => {
+    async function deleteFriend(id) {
+        await Axios.delete(`${process.env.REACT_APP_API_URL}/api/employee/delete/${id}`).then(() => {
      setEmployees(employees.filter(employee => employee._id !== id))
     
-  })
+  }).catch(err => console.log(err))
 }
 
     return (
@@ -66,7 +66,7 @@ const Table = memo(() => {
             </div>
 
             <div className="p-1 w-[160px]  min-h-[100px] flex items-center justify-center flex-wrap">
-            <Button onClick={()=> deleteFriend(employee._id)} className="text-center">Delete</Button>
+            <Button onClick={(e) => deleteFriend(employee._id)} className="text-center">Delete</Button>
 
             </div>
             
