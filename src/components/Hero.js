@@ -1,4 +1,3 @@
-import Row from './Row'
 const Row = React.lazy(() => import('./Row'));
 const Table = React.lazy(() => import('./Table'));
 const Hero  = () => {
