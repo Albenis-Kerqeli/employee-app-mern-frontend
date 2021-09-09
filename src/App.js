@@ -2,7 +2,6 @@ import React, { Suspense , } from 'react';
 import {StoreContext} from './contexts/Store';
 import { Route } from 'react-router-dom';
 
-import './styles/App.css';
 import {BrowserRouter as Router , Switch} from 'react-router-dom';
 const Home = React.lazy(() => import('./pages/Home.js'));
 const Login = React.lazy(() => import('./pages/Login.js'));
