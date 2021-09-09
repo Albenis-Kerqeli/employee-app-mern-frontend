@@ -11,6 +11,14 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+function handleEmail(e) {
+  setEmail(e.target.value);
+}
+
+function handlePassword(e) {
+  setPassword(e.target.value);
+}
+
   async function handleLogin(e){
     e.preventDefault();
     if (email === '' || password === '') {
@@ -54,29 +62,25 @@ const Login = () => {
           <input type="hidden" name="remember" defaultValue="true" />
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
+
               <input
                 id="email"
                 name="email"
                 type="text"
                 autoComplete="email"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleEmail}
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Email"
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
+
               <input
                 id="password"
                 name="password"
                 type="password"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handlePassword}
                 autoComplete="current-password"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"

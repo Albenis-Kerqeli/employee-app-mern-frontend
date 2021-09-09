@@ -18,7 +18,7 @@ async function getEmployees() {
           headers: {
             'Content-Type' : 'application/json',
             'Accept' : 'application/json',
-            "x-access-token": localStorage.getItem("token"),
+            "x-access-token": token,
           },
         }).then(res => {
             setEmployees(res.data);

@@ -12,12 +12,25 @@ const [email,setEmail] = useState('');
 const [salary,setSalary] = useState('');
 
 
+function handleName(e) {
+  setName(e.target.value);
+}
+function handleDesignation(e) {
+  setDesignation(e.target.value);
+}
+function handleEmail(e) {
+  setEmail(e.target.value);
+}
+
+function handleSalary(e) {
+  setSalary(e.target.value);
+}
+
 
 
 
 async function addEmployee (e){
   e.preventDefault();
-
 if(name==="" || designation==="" || email==="" || salary===""){
   alert("Please fill all the fields");
 }
@@ -52,7 +65,7 @@ else {
 }
 
 }).catch(err=> {
-  alert(err);
+  console.log(err);
 })
  }
 
@@ -68,10 +81,10 @@ else {
         <div className="modalBody">
         <form type="submit">
         
-        <input type="text" onChange={(e)=> setName(e.target.value)} placeholder="Enter Your Name" required/>
-<input type="text" onChange={(e)=> setDesignation(e.target.value)}  placeholder="Enter your Designation" required />
-<input type="text" onChange={(e)=> setEmail(e.target.value)}   placeholder="Enter your Email" required/>
-<input type="number" onChange={(e)=> setSalary(e.target.value)}   placeholder="Enter your Salary" required />
+        <input type="text" onChange={handleName} placeholder="Enter Your Name" required/>
+<input type="text" onChange={handleDesignation}  placeholder="Enter your Designation" required />
+<input type="text" onChange={handleEmail}   placeholder="Enter your Email" required/>
+<input type="number" onChange={handleSalary}   placeholder="Enter your Salary" required />
 
 
         </form>

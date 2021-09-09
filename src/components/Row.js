@@ -1,6 +1,8 @@
-import  {useState,memo, useContext, useEffect} from 'react';
+import  {useState,memo, useContext, useEffect}from 'react';
+
 import Button from './Button';
 import AddModal from './AddModal';
+
 const {StoreContext} = require('../contexts/Store');
 const Row = memo(()  => {
     const {employees,setEmployees , filteredEmployee} = useContext(StoreContext);
@@ -10,6 +12,9 @@ const [search,setSearch] = useState('');
 function handleSearch(e) {
     e.preventDefault();
     setSearch(e.target.value);
+}
+function handleOpen(e) {
+    setModalOpen(false);
 }
 
 useEffect(() => {
@@ -30,7 +35,7 @@ if(search==="" ) {
        <div className="container mx-sm  sm:container flex flex-row flex-wrap items-center justify-around">
        <div className="flex flex-row items-center justify-center gap-1">
            <Button className="bg-red-700" onClick={() => setModalOpen(true)}>Add Employee</Button>
-           {modalOpen?<AddModal setOpenModal={setModalOpen} setClosedModal={((e)=> setModalOpen(false))}/>:null}
+           {modalOpen?<AddModal setOpenModal={setModalOpen} setClosedModal={handleOpen}/>:null}
            </div>
 
            <form className="flex flex-row items-center justify-center gap-10">
