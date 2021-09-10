@@ -12,7 +12,7 @@ const App = () => {
   const {isLoggedIn} = useContext(StoreContext);
   return (
     <>
-    <Suspense fallback={<p>Loading..</p}>
+    <Suspense fallback={<p>Loading..</p>}>
     <Router>
     
     <Navbar/>
