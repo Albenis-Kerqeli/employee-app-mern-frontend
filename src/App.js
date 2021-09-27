@@ -12,18 +12,19 @@ const App = () => {
   const {isLoggedIn} = useContext(StoreContext);
   return (
     <>
-    <Suspense fallback={<p>Loading..</p>}>
     <Router>
     
     <Navbar/>
+    <Suspense fallback={<p>Loading..</p>}>
 
     <Switch>
  {isLoggedIn ? <Route   path="/" component={Home} /> : <Route exact path="/" component={Login} />}
  {!isLoggedIn ? <Route exact path="/login" component={Login} /> : <Route  path="/" component={Home} />}
  {!isLoggedIn ? <Route exact path="/register"  component={Register} /> : <Route  path="/" component={Home} />}
 </Switch>
+  </Suspense>
+
 </Router>
-</Suspense>
   </>
 
 
