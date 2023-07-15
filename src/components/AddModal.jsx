@@ -1,9 +1,9 @@
-import {useContext,useState ,memo } from 'react'
+import {useContext,useState  } from 'react'
 import { StoreContext } from '../contexts/Store';
 import Axios from 'axios';
 import '../styles/modal.css';
 
-const AddModal =memo(({ setOpenModal ,setClosedModal}) =>  {
+const AddModal =({ setOpenModal ,setClosedModal}) =>  {
   // Declare states for form
   const {employees,setEmployees}  = useContext(StoreContext);
 const [name,setName] = useState('');
@@ -44,14 +44,14 @@ const headers = {
 "X-Content-Type-Options": "nosniff",
 }
 
- await Axios.post(`${process.env.REACT_APP_API_URL}/api/employee/store`, {
+ await Axios.post(`${import.meta.env.VITE_API_URL}/api/employee/store`, {
   name:name,
   designation:designation,
   email:email,
   salary:salary
  }, { headers })
 .then(res => {
-if(res.data!=={}) {
+if(res.data) {
   setEmployees(employees => [...employees, res.data]);
   setName('');
   setDesignation('');
@@ -109,7 +109,7 @@ Create
         </div>
       </div>
     );
-  });
+  };
   
 
   

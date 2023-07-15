@@ -1,7 +1,7 @@
-import {useEffect, useState, createContext , useMemo, memo} from 'react';
+import {useEffect, useState, createContext , useMemo} from 'react';
 import axios from 'axios';
 export const StoreContext = createContext();
-const StoreProvider = memo((props) => {
+const StoreProvider = (props) => {
     const token =localStorage.getItem('token');
     const [employees, setEmployees] = useState([]);
 const [filteredEmployee,setFilteredEmployee]=  useState([]);
@@ -14,12 +14,11 @@ async function getEmployees() {
     if(token){
         setIsLoggedIn(true);
 
-        await axios.get(`${process.env.REACT_APP_API_URL}/api/employee`, {
+        await axios.get(`${import.meta.env.VITE_API_URL}/api/employee`, {
           headers: {
             'Content-Type' : 'application/json',
             'Accept' : 'application/json',
             "x-access-token": token,
-            "X-Content-Type-Options": "nosniff",
 
           },
         }).then(res => {
@@ -56,6 +55,6 @@ return(
         {props.children}
     </StoreContext.Provider>
 )
-});
+};
 
 export default StoreProvider;

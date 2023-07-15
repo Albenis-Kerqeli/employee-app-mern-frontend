@@ -1,13 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css';
 import App from './App';
 import StoreProvider from './contexts/Store';
-ReactDOM.render(
+import { createRoot } from 'react-dom/client';
+import './styles/index.css';
+
+
+const container = document.getElementById('app');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+
+
+root.render(
   <StoreProvider>
     <App />
   </StoreProvider>,
-  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -2,13 +2,17 @@
 import {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import {StoreContext} from '../contexts/Store';
-import {useHistory} from 'react-router-dom'; 
+import {useNavigate} from 'react-router-dom'; 
 const Navbar = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const {isLoggedIn, setIsLoggedIn} = useContext(StoreContext);
 
-
+const handleLogout = () => {
+  localStorage.removeItem('token');
+  setIsLoggedIn(false);
+  navigate('/');
+}
 
     return(
         <div className="w-full min-h-50  p-4 flex-wrap flex items-center justify-around bg-black	 gap-5  ">
@@ -22,12 +26,7 @@ const Navbar = () => {
 
 
   <li className="list-none px-2">
-  {isLoggedIn? <a className="text-white " href={'/'} onClick={(e) => {
-    e.preventDefault();
-    localStorage.removeItem('token');
-    setIsLoggedIn(false);
-    history.push('/');
-  }}>Logout</a> : 
+  {isLoggedIn? <a className="text-white " href={'/'} onClick={handleLogout}>Logout</a> : 
   
   
     <Link className="text-center text-white" to="/register">Register</Link> }
